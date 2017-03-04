@@ -2,10 +2,6 @@ package com.example.haresh.aashasmsserver.models;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by Harjot on 07-Feb-17.
- */
-
 public class VisitingDoctorModel {
 
     @SerializedName("id")
