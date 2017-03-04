@@ -1,4 +1,4 @@
-package com.example.haresh.aashasmsserevr;
+package com.example.haresh.aashasmsserver;
 
 import org.junit.Test;
 

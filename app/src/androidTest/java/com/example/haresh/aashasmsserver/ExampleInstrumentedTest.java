@@ -1,4 +1,4 @@
-package com.example.haresh.aashasmsserevr;
+package com.example.haresh.aashasmsserver;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.haresh.aashasmsserevr", appContext.getPackageName());
+        assertEquals("com.example.haresh.aashasmsserver", appContext.getPackageName());
     }
 }
