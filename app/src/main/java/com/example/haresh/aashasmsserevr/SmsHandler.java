@@ -4,13 +4,15 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class SmsManager extends BroadcastReceiver {
+public class SmsHandler extends BroadcastReceiver {
 
     static String recievedMSG = null;
     static String TAG = "smsmanager";
@@ -37,6 +39,17 @@ public class SmsManager extends BroadcastReceiver {
                     recievedMSG = msg.getDisplayMessageBody();
                 }
             }
+        }
+    }
+
+    public static void sendSms(String msg, String phoneNo, Context context) {
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNo, null, msg, null, null);
+            Toast.makeText(context, "Message Sent", Toast.LENGTH_SHORT).show();
+        } catch (Exception ex) {
+            Toast.makeText(context, ex.getMessage(), Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
     }
 }
