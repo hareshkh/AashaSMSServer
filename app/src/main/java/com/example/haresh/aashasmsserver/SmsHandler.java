@@ -10,7 +10,7 @@ import android.util.Log;
 
 public class SmsHandler extends BroadcastReceiver {
 
-    final String TAG = "SMS_Handler";
+    final static String TAG = "SMS_Handler";
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -34,7 +34,7 @@ public class SmsHandler extends BroadcastReceiver {
         }
     }
 
-    public void sendSms(String msg, String phoneNo) {
+    public static void sendSms(String msg, String phoneNo) {
         try {
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(phoneNo, null, msg, null, null);
