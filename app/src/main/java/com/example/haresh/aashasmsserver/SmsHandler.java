@@ -294,6 +294,7 @@ public class SmsHandler extends BroadcastReceiver {
     }
 
     public static void sendSms(String msg, String phoneNo) {
+        MainActivity.setStatus(phoneNo, msg);
         try {
             SmsManager smsManager = SmsManager.getDefault();
             ArrayList<String> parts = smsManager.divideMessage(msg);
